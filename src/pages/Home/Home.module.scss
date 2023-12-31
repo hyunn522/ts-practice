@@ -27,6 +27,13 @@
 .categoryContainer {
   display: grid;
   margin-top: 74px;
+  margin-left: 24px;
+  margin-right: 24px;
   justify-content: center;
-  gap: 9px;
+  align-items: center;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 9px;
+  row-gap: 10px;
 }

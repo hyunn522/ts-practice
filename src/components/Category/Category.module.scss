@@ -1,0 +1,23 @@
+@mixin heading2 {
+  font-family: 'Pretendard-Medium';
+  font-size: 17px;
+  color: #333d4b;
+  font-weight: 500;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.name {
+  @include heading2;
+  font-family: 'Pretendard-SemiBold';
+  font-size: 14px;
+  margin-top: 4px;
+}

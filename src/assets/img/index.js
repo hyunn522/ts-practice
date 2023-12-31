@@ -1,0 +1,12 @@
+export { ReactComponent as HomePizza } from './ic-home-pizza.svg';
+export { ReactComponent as HomeSalad } from './ic-home-salad.svg';
+export { ReactComponent as HomeBurger } from './ic-home-hamburger.svg';
+export { ReactComponent as HomeHansik } from './ic-home-hansik.svg';
+export { ReactComponent as HomeBunsik } from './ic-home-bunsik.svg';
+export { ReactComponent as HomeChicken } from './ic-home-chicken.svg';
+export { ReactComponent as HomeSushi } from './ic-home-sushi.svg';
+export { ReactComponent as HomeSandwich } from './ic-home-sandwich.svg';
+export { ReactComponent as HomePasta } from './ic-home-pasta.svg';
+export { ReactComponent as HomeDessert } from './ic-home-dessert.svg';
+export { ReactComponent as HomeCoffee } from './ic-home-coffee.svg';
+export { ReactComponent as HomeMore } from './ic-home-more.svg';
