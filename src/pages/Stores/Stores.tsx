@@ -1,7 +1,7 @@
-import React from 'react';
+import styles from './Stores.module.scss';
 
 const Stores = () => {
-  return <div>Stores</div>;
+  return <div className="heading1">Stores</div>;
 };
 
 export default Stores;

@@ -1,0 +1,21 @@
+:global {
+  .heading1 {
+    font-family: 'Pretendard-Bold';
+    font-size: 26px;
+    color: #191f28;
+    font-weight: 700;
+  }
+}
+
+:global {
+  .heading2 {
+    font-family: 'Pretendard-Medium';
+    font-size: 17px;
+    color: #333d4b;
+    font-weight: 500;
+  }
+}
+
+.homeMenuContainer {
+  display: grid;
+}

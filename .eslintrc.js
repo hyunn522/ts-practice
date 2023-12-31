@@ -28,12 +28,12 @@ module.exports = {
   plugins: ['react'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
-    'react/function-component-definition': [
-      2,
-      { namedComponents: ['arrow-function', 'function-declaration'] },
-    ],
+    'react/function-component-definition': 'off',
     'react/react-in-jsx-scope': 'off',
     'arrow-body-style': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
 };
