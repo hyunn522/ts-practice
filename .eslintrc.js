@@ -27,6 +27,13 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'react/function-component-definition': [
+      2,
+      { namedComponents: ['arrow-function', 'function-declaration'] },
+    ],
+    'react/react-in-jsx-scope': 'off',
+    'arrow-body-style': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
 };
