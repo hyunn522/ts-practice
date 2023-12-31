@@ -1,13 +1,26 @@
 import { create, createStore } from 'zustand';
 
-interface cartStore {
+interface cart {
   cartStore: string;
   cartMenus: [];
   cartSum: number;
 }
 
-// const initialCart = [
-//     store: '없음',
-//     menus: [],
-//     sum: 0,
-// ]
+const initialCart: cart = { cartStore: '없음', cartMenus: [], cartSum: 0 };
+
+const useCartStore = create((set, get) => ({
+  cartStore: initialCart.cartStore,
+  cartMenus: initialCart.cartMenus,
+  cartSum: initialCart.cartSum,
+
+  // cart 초기화하는 함수
+  setInit: () => {
+    set(() => ({
+      cartStore: initialCart.cartStore,
+      cartMenus: initialCart.cartMenus,
+      cartSum: initialCart.cartSum,
+    }));
+  },
+
+  // cart에 menu 추가하는 함수
+}));

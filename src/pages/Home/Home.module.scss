@@ -1,21 +1,32 @@
-:global {
-  .heading1 {
-    font-family: 'Pretendard-Bold';
-    font-size: 26px;
-    color: #191f28;
-    font-weight: 700;
-  }
+@mixin heading1 {
+  font-family: 'Pretendard-Bold';
+  font-size: 26px;
+  color: #191f28;
+  font-weight: 700;
 }
 
-:global {
-  .heading2 {
-    font-family: 'Pretendard-Medium';
-    font-size: 17px;
-    color: #333d4b;
-    font-weight: 500;
-  }
+@mixin heading2 {
+  font-family: 'Pretendard-Medium';
+  font-size: 17px;
+  color: #333d4b;
+  font-weight: 500;
 }
 
-.homeMenuContainer {
+.header {
+  @include heading1;
+  margin-top: 66px;
+  margin-left: 24px;
+}
+
+.subHeader {
+  @include heading2;
+  margin-top: 13px;
+  margin-left: 24px;
+}
+
+.categoryContainer {
   display: grid;
+  margin-top: 74px;
+  justify-content: center;
+  gap: 9px;
 }
