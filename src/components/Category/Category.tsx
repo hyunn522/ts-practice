@@ -16,11 +16,10 @@ import {
 } from '../../assets/img/index';
 
 interface CategoryProps {
-  key: number;
   store: string;
 }
 
-const Category = ({ key, store }: CategoryProps) => {
+const Category = ({ store }: CategoryProps) => {
   const icons = [
     HomePizza,
     HomeSalad,
@@ -39,7 +38,7 @@ const Category = ({ key, store }: CategoryProps) => {
   const Icon = icons[index];
 
   return (
-    <div className={styles.item}>
+    <div className={styles.category}>
       <Icon />
       <p className={styles.name}>피자</p>
     </div>

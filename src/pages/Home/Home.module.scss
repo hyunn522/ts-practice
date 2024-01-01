@@ -2,14 +2,12 @@
   font-family: 'Pretendard-Bold';
   font-size: 26px;
   color: #191f28;
-  font-weight: 700;
 }
 
 @mixin heading2 {
-  font-family: 'Pretendard-Medium';
+  font-family: 'Pretendard-SemiBold';
   font-size: 17px;
   color: #333d4b;
-  font-weight: 500;
 }
 
 .header {
@@ -22,6 +20,7 @@
   @include heading2;
   margin-top: 13px;
   margin-left: 24px;
+  font-family: 'Pretendard-Medium';
 }
 
 .categoryContainer {

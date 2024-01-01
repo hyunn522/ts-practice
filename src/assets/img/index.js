@@ -10,3 +10,4 @@ export { ReactComponent as HomePasta } from './ic-home-pasta.svg';
 export { ReactComponent as HomeDessert } from './ic-home-dessert.svg';
 export { ReactComponent as HomeCoffee } from './ic-home-coffee.svg';
 export { ReactComponent as HomeMore } from './ic-home-more.svg';
+export { ReactComponent as TopBack } from './ic-topbar-left-chevron.svg';

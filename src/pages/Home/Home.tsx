@@ -3,7 +3,7 @@ import OrderBar from '../../components/OrderBar/OrderBar';
 import styles from './Home.module.scss';
 
 const Home = () => {
-  const stores: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const categories: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
   return (
     <>
@@ -12,8 +12,8 @@ const Home = () => {
         한남중앙로 40길 (한남 빌리지)(으)로 배달
       </div>
       <div className={styles.categoryContainer}>
-        {stores.map((store) => {
-          return <Category key={1} store={store} />;
+        {categories.map((category) => {
+          return <Category store={category} />;
         })}
       </div>
       <OrderBar />
