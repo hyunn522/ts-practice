@@ -1,0 +1,17 @@
+@import '../../styles/colors';
+
+.topBar {
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backBtn {
+  margin-left: 10px;
+}
+
+.cancelBtn {
+  @include heading2;
+  margin-right: 15px;
+}

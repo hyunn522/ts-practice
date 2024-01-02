@@ -1,13 +1,13 @@
 import { TopBack } from '../../assets/img/index';
+import styles from './TopBar.module.scss';
 
-const styles = {
-  marginLeft: '10px',
-  marginTop: '10px',
-  marginBottom: '10px',
-};
-
-const TopBar = () => {
-  return <TopBack style={styles} />;
+const TopBar = ({ children }: any) => {
+  return (
+    <div className={styles.topBar}>
+      <TopBack className={styles.backBtn} />
+      <span className={styles.cancelBtn}>{children}</span>
+    </div>
+  );
 };
 
 export default TopBar;

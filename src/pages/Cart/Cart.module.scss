@@ -1,0 +1,6 @@
+@import '../../styles/colors';
+
+.line {
+  @include line;
+  height: 16px;
+}
