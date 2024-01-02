@@ -26,6 +26,7 @@
 }
 
 .storeSubHeader {
+  margin-top: 9px;
   margin-left: 24px;
   margin-bottom: 14px;
   @include GR300;
@@ -38,6 +39,10 @@
       margin-left: 12px;
     }
   }
+}
+
+.line {
+  @include line;
 }
 
 .category {

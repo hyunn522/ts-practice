@@ -31,3 +31,8 @@
   color: #4e5968;
   font-family: 'Pretendard-Medium';
 }
+
+@mixin line {
+  height: 1px;
+  background: #e5e8eb;
+}

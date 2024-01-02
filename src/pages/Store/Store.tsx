@@ -4,7 +4,8 @@ import TopBar from '../../components/Top/TopBar';
 import styles from './Store.module.scss';
 
 const Store = () => {
-  const menus: string[] = [];
+  const menus: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
   return (
     <>
       <TopBar />
@@ -29,6 +30,7 @@ const Store = () => {
           <span>약 -분</span>
         </div>
       </div>
+      <div className={styles.line} />
       <div className={styles.category}>카테고리</div>
       {menus.map((menu) => {
         return <MenuItem menu={menu} />;

@@ -1,0 +1,49 @@
+@import '../../styles/colors';
+@import '../StoreItem/StoreItem.module';
+
+.menu {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.lastMargin {
+    margin-bottom: 77px;
+  }
+
+  & .addBtn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+image {
+  border-radius: 27px;
+}
+
+.menuInfo {
+  display: flex;
+  flex-direction: row;
+
+  & .menuText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+
+    & .best {
+      margin-left: 6px;
+      color: #3182f6;
+      font-family: 'Pretendard-SemiBold';
+      font-size: 17px;
+    }
+
+    & span:first-child {
+      @include heading2;
+    }
+
+    & .menuBody {
+      @include body1;
+      margin-top: 5px;
+    }
+  }
+}
