@@ -1,7 +1,13 @@
-import React from 'react';
+import TopBar from '../../components/Top/TopBar';
+import styles from './Store.module.scss';
 
 const Store = () => {
-  return <div>Store</div>;
+  return (
+    <>
+      <TopBar />
+      <div className={styles.header} />
+    </>
+  );
 };
 
 export default Store;

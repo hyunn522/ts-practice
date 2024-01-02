@@ -40,7 +40,7 @@ const Category = ({ store }: CategoryProps) => {
   return (
     <div className={styles.category}>
       <Icon />
-      <p className={styles.name}>피자</p>
+      <p>피자</p>
     </div>
   );
 };

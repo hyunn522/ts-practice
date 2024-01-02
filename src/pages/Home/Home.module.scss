@@ -1,14 +1,4 @@
-@mixin heading1 {
-  font-family: 'Pretendard-Bold';
-  font-size: 26px;
-  color: #191f28;
-}
-
-@mixin heading2 {
-  font-family: 'Pretendard-SemiBold';
-  font-size: 17px;
-  color: #333d4b;
-}
+@import '../../styles/colors.scss';
 
 .header {
   @include heading1;

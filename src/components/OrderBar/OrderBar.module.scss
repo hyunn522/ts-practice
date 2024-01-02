@@ -1,13 +1,4 @@
-@mixin GR100 {
-  color: #6b7684;
-  font-family: 'Pretendard-Regular';
-  font-size: 15px;
-}
-
-@mixin GR200 {
-  color: #4e5968;
-  font-family: 'Pretendard-SemiBold';
-}
+@import '../../styles/colors.scss';
 
 .barContainer {
   position: fixed;
@@ -21,25 +12,25 @@
   border-radius: 16px 16px 0px 0px;
   background: #fff;
   box-shadow: 0px -8px 16px 0px rgba(0, 0, 0, 0.1);
-}
 
-.priceContainer {
-  display: flex;
-  flex-direction: column;
-  margin-left: 24px;
-}
+  & div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+  }
 
-.priceLabel {
-  @include GR100();
-}
+  & .priceLabel {
+    @include GR100;
+  }
 
-.price {
-  @include GR200();
-  margin-top: 5px;
-  font-size: 17px;
-}
+  & .price {
+    @include GR200;
+    margin-top: 5px;
+    font-size: 17px;
+  }
 
-.barBtn {
-  font-size: 15px;
-  margin-right: 24px;
+  & .barBtn {
+    font-size: 15px;
+    margin-right: 24px;
+  }
 }

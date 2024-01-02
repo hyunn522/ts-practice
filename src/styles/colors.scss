@@ -1,0 +1,28 @@
+@mixin heading1 {
+  font-family: 'Pretendard-Bold';
+  font-size: 26px;
+  color: #191f28;
+}
+
+@mixin heading2 {
+  font-family: 'Pretendard-SemiBold';
+  font-size: 17px;
+  color: #333d4b;
+}
+
+@mixin body1 {
+  font-family: 'Pretendard-Medium';
+  font-size: 13px;
+  color: #6b7684;
+}
+
+@mixin GR100 {
+  color: #6b7684;
+  font-family: 'Pretendard-Regular';
+  font-size: 15px;
+}
+
+@mixin GR200 {
+  color: #4e5968;
+  font-family: 'Pretendard-SemiBold';
+}
