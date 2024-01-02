@@ -1,1 +1,50 @@
 @import '../../styles/colors';
+@import '../Stores/Stores.module.scss';
+
+.storeHeader {
+  display: flex;
+  flex-direction: column;
+
+  & > div:nth-child(2) {
+    display: flex;
+    padding-top: 7px;
+    padding-bottom: 12px;
+    padding-left: 23px;
+
+    & > span:first-child {
+      @include GR200;
+      font-size: 17px;
+    }
+
+    & > span:last-child {
+      @include GR300;
+      font-size: 16px;
+      margin-left: 9px;
+      margin-top: 1px;
+    }
+  }
+}
+
+.storeSubHeader {
+  margin-left: 24px;
+  margin-bottom: 14px;
+  @include GR300;
+  font-size: 15px;
+
+  & > div {
+    margin-top: 9px;
+
+    & > span:last-child {
+      margin-left: 12px;
+    }
+  }
+}
+
+.category {
+  font-size: 17px;
+  font-family: 'Pretendard-SemiBold';
+  color: #6b7684;
+  margin-top: 26px;
+  margin-left: 24px;
+  margin-bottom: 11px;
+}

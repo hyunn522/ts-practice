@@ -1,8 +1,7 @@
 @import '../../styles/colors.scss';
+@import '../Home/Home.module.scss';
 
 .header {
-  @include heading1;
   margin-top: 26px;
   margin-bottom: 2px;
-  margin-left: 24px;
 }
