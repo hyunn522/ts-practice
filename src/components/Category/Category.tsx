@@ -23,10 +23,11 @@ interface CategoryType {
 
 interface CategoryProps {
   category: CategoryType;
+  // handleClick: () => any;
 }
 
 const Category = ({ category }: CategoryProps) => {
-  const [index, setIndex] = useState<number>(Number);
+  const [index, setIndex] = useState<number>(category.id - 1);
 
   const icons = [
     HomePizza,
@@ -42,16 +43,15 @@ const Category = ({ category }: CategoryProps) => {
     HomeCoffee,
     HomeMore,
   ];
+  const Icon = icons[index];
 
   useEffect(() => {
     setIndex(category.id - 1);
-  });
-
-  const Icon = icons[index];
+  }, [category.id]);
 
   return (
     <div className={styles.category}>
-      <Icon className={styles.icon} />
+      <Icon />
       <p>
         {category.name}
         {category.id - 1}
