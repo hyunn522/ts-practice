@@ -17,13 +17,14 @@
   }
 }
 
-image {
-  border-radius: 27px;
-}
-
 .menuInfo {
   display: flex;
   flex-direction: row;
+
+  & image {
+    @include img;
+    border-radius: 27px;
+  }
 
   & .menuText {
     display: flex;

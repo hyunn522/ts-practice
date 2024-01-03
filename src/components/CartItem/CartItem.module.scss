@@ -1,0 +1,46 @@
+@import '../../styles/colors';
+@import '../MenuItem/MenuItem.module.scss';
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px 16px 24px;
+
+  &.lastMargin {
+    margin-bottom: 110px;
+  }
+}
+
+.cartMenuInfo {
+  display: flex;
+
+  & image {
+    @include img;
+    border-radius: 27px;
+  }
+
+  & .cartMenuText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 17px;
+
+    & span {
+      @include body1;
+      margin-top: 5px;
+    }
+
+    & span:first-child {
+      margin-top: 0px;
+      @include heading2;
+      font-family: 'Pretendard-Bold';
+    }
+  }
+}
+
+.cartMenuCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include body1;
+  font-size: 15px;
+}

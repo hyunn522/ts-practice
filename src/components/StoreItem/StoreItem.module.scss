@@ -10,6 +10,10 @@
     margin-bottom: 77px; /* 조건에 따라 추가할 마진 값 */
   }
 
+  & image {
+    @include img;
+  }
+
   & div {
     display: flex;
     flex-direction: column;
@@ -28,12 +32,4 @@
       margin-top: 4px;
     }
   }
-}
-
-image {
-  width: 54px;
-  height: 54px;
-
-  border-radius: 8px;
-  background: #ececec;
 }

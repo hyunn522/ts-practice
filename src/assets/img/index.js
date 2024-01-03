@@ -11,3 +11,5 @@ export { ReactComponent as HomeDessert } from './ic-home-dessert.svg';
 export { ReactComponent as HomeCoffee } from './ic-home-coffee.svg';
 export { ReactComponent as HomeMore } from './ic-home-more.svg';
 export { ReactComponent as TopBack } from './ic-topbar-left-chevron.svg';
+export { ReactComponent as CartWarning } from './ic-cart-warning.svg';
+export { ReactComponent as CartMore } from './ic-cart-right-chevron.svg';

@@ -36,3 +36,11 @@
   height: 1px;
   background: #e5e8eb;
 }
+
+@mixin img {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 8px;
+  background: #ececec;
+}
