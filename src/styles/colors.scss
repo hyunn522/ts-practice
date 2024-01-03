@@ -32,6 +32,12 @@
   font-family: 'Pretendard-Medium';
 }
 
+@mixin GR400 {
+  color: #8b95a1;
+  font-family: 'Pretendard-Medium';
+  font-size: 17px;
+}
+
 @mixin line {
   height: 1px;
   background: #e5e8eb;

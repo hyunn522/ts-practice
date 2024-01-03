@@ -27,6 +27,22 @@ const Cart = () => {
       {cartMenus.map((menu) => {
         return <CartItem menu={menu} />;
       })}
+      <div className={styles.cartAdd}>더 담기 +</div>
+      <div className={styles.line} />
+      <div className={styles.cartPrice}>
+        <div>
+          <span>주문금액</span>
+          <span>원</span>
+        </div>
+        <div>
+          <span>배달요금</span>
+          <span>원</span>
+        </div>
+        <div>
+          <span>총 결제금액</span>
+          <span>원</span>
+        </div>
+      </div>
       {isEnough ? (
         <div className={styles.cartBottom}>
           <Button className={styles.cartBtn}>원 결제하기</Button>

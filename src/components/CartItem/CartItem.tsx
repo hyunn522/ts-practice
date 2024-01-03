@@ -9,7 +9,7 @@ const CartItem = ({ menu }: MenuProps) => {
   const isLast = menu === '9';
 
   return (
-    <div className={` ${styles.cartItem} ${isLast ? styles.lastMargin : ''}`}>
+    <div className={styles.cartItem}>
       <div className={styles.cartMenuInfo}>
         <image />
         <div className={styles.cartMenuText}>
