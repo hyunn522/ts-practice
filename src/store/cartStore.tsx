@@ -1,12 +1,12 @@
 import { create, createStore } from 'zustand';
 
-interface cart {
+interface Cart {
   cartStore: string;
   cartMenus: [];
   cartSum: number;
 }
 
-const initialCart: cart = { cartStore: '없음', cartMenus: [], cartSum: 0 };
+const initialCart: Cart = { cartStore: '없음', cartMenus: [], cartSum: 0 };
 
 const useCartStore = create((set, get) => ({
   cartStore: initialCart.cartStore,

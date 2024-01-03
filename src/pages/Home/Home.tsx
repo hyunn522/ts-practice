@@ -1,9 +1,36 @@
+import { useEffect, useState } from 'react';
 import Category from '../../components/Category/Category';
 import OrderBar from '../../components/OrderBar/OrderBar';
 import styles from './Home.module.scss';
+import { getCategories } from '../../apis/store';
+
+interface CategoryType {
+  id: number;
+  name: string;
+}
 
 const Home = () => {
-  const categories: string[] = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const [categories, setCategories] = useState<CategoryType[] | undefined>(
+    undefined,
+  );
+
+  useEffect(() => {
+    getCategories()
+      .then((value: CategoryType[]) => {
+        setCategories(value);
+      })
+      .catch((err) => {
+        console.error('Error fetching data: ', err);
+      });
+  }, []);
+
+  if (categories === undefined) {
+    return <div>로딩 중...</div>;
+  }
+
+  if (categories === null) {
+    return <div>카테고리를 찾을 수 없어요</div>;
+  }
 
   return (
     <div className={styles.home}>
@@ -13,7 +40,7 @@ const Home = () => {
       </div>
       <div className={styles.categoryContainer}>
         {categories.map((category) => {
-          return <Category store={category} />;
+          return <Category key={category.id} category={category} />;
         })}
       </div>
       <OrderBar />

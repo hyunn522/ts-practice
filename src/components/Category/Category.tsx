@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styles from './Category.module.scss';
 
 import {
@@ -15,11 +16,18 @@ import {
   HomeMore,
 } from '../../assets/img/index';
 
-interface CategoryProps {
-  store: string;
+interface CategoryType {
+  id: number;
+  name: string;
 }
 
-const Category = ({ store }: CategoryProps) => {
+interface CategoryProps {
+  category: CategoryType;
+}
+
+const Category = ({ category }: CategoryProps) => {
+  const [index, setIndex] = useState<number>(Number);
+
   const icons = [
     HomePizza,
     HomeSalad,
@@ -34,13 +42,20 @@ const Category = ({ store }: CategoryProps) => {
     HomeCoffee,
     HomeMore,
   ];
-  const index = 0;
+
+  useEffect(() => {
+    setIndex(category.id - 1);
+  });
+
   const Icon = icons[index];
 
   return (
     <div className={styles.category}>
       <Icon className={styles.icon} />
-      <p>피자</p>
+      <p>
+        {category.name}
+        {category.id - 1}
+      </p>
     </div>
   );
 };
