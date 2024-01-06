@@ -4,6 +4,21 @@ import OrderBar from '../../components/OrderBar/OrderBar';
 import styles from './Home.module.scss';
 import { getCategories } from '../../apis/store';
 
+import {
+  HomePizza,
+  HomeSalad,
+  HomeBurger,
+  HomeHansik,
+  HomeBunsik,
+  HomeChicken,
+  HomeSushi,
+  HomeSandwich,
+  HomePasta,
+  HomeDessert,
+  HomeCoffee,
+  HomeMore,
+} from '../../assets/img/index';
+
 interface CategoryType {
   id: number;
   name: string;
@@ -13,6 +28,21 @@ const Home = () => {
   const [categories, setCategories] = useState<CategoryType[] | undefined>(
     undefined,
   );
+
+  const icons = [
+    HomePizza,
+    HomeSalad,
+    HomeBurger,
+    HomeHansik,
+    HomeBunsik,
+    HomeChicken,
+    HomeSushi,
+    HomeSandwich,
+    HomePasta,
+    HomeDessert,
+    HomeCoffee,
+    HomeMore,
+  ];
 
   useEffect(() => {
     getCategories()
@@ -40,7 +70,13 @@ const Home = () => {
       </div>
       <div className={styles.categoryContainer}>
         {categories.map((category) => {
-          return <Category key={category.id} category={category} />;
+          return (
+            <Category
+              key={category.id}
+              category={category}
+              icon={icons[category.id - 1]}
+            />
+          );
         })}
       </div>
       <OrderBar />
