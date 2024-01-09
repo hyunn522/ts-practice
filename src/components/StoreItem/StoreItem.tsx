@@ -1,11 +1,12 @@
+import { type StoreType } from '../../utils/interfaces';
 import styles from './StoreItem.module.scss';
 
-interface StoreProps {
-  store: string;
+interface IStore {
+  store: StoreType;
 }
-
-const StoreItem = ({ store }: StoreProps) => {
-  const isLast = store === '9';
+const StoreItem = ({ store }: IStore) => {
+  // const isLast = store === '9';
+  const isLast = false;
 
   return (
     <div className={`${styles.store} ${isLast ? styles.lastMargin : ''}`}>
