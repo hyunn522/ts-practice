@@ -5,20 +5,6 @@ import OrderBar from '../../components/OrderBar/OrderBar';
 import styles from './Home.module.scss';
 import { getCategories } from '../../apis/store';
 
-import {
-  HomePizza,
-  HomeSalad,
-  HomeBurger,
-  HomeHansik,
-  HomeBunsik,
-  HomeChicken,
-  HomeSushi,
-  HomeSandwich,
-  HomePasta,
-  HomeDessert,
-  HomeCoffee,
-  HomeMore,
-} from '../../assets/img/index';
 import { type CategoryType } from '../../utils/interfaces';
 
 const Home = () => {
@@ -26,21 +12,6 @@ const Home = () => {
     undefined,
   );
   const navigate = useNavigate();
-
-  const icons = [
-    <HomePizza key={0} />,
-    <HomeSalad key={1} />,
-    <HomeBurger key={2} />,
-    <HomeHansik key={3} />,
-    <HomeBunsik key={4} />,
-    <HomeChicken key={5} />,
-    <HomeSushi key={6} />,
-    <HomeSandwich key={7} />,
-    <HomePasta key={8} />,
-    <HomeDessert key={9} />,
-    <HomeCoffee key={10} />,
-    <HomeMore key={11} />,
-  ];
 
   const handleClick = (id: number) => {
     navigate(`/store`);
@@ -73,13 +44,10 @@ const Home = () => {
       </div>
       <div className={styles.categoryContainer}>
         {categories.map((category) => {
-          const icon = icons[category.id - 1];
-          // console.log(icon.key);
           return (
             <Category
               key={category.id}
               category={category}
-              icon={icon}
               onClick={handleClick}
             />
           );
