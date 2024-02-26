@@ -17,8 +17,8 @@ const Home = () => {
     queryFn: async () => getCategories(),
   });
 
-  const handleClick = (id: number) => {
-    navigate(`/store`);
+  const handleClick = (categoryId: number) => {
+    navigate(`/category/${categoryId}`);
   };
 
   useEffect(() => {

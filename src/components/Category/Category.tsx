@@ -52,7 +52,6 @@ const Category = ({ category, onClick }: CategoryProps) => {
 
   useEffect(() => {
     setCategoryIcon(icons[category.id - 1]);
-    console.log(category.id - 1);
   }, []);
 
   return (
