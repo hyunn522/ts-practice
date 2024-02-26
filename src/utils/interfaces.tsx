@@ -9,7 +9,7 @@ export interface MenuType {
 export interface StoreType {
   id: number;
   name: string;
-  category: string;
+  category: number;
   ranking: number;
   rate: number;
   reviewCnt: number;
