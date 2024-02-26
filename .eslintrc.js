@@ -38,5 +38,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 0,
     'prefer-default-export': 'off',
     'import/prefer-default-export': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 0,
   },
 };

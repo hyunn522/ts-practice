@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useQuery } from 'react-query';
 import styles from './Stores.module.scss';
 
 import OrderBar from '../../components/OrderBar/OrderBar';
@@ -10,8 +11,13 @@ import { getStores } from '../../apis/store';
 import { type StoreType } from '../../utils/interfaces';
 
 const Stores = () => {
-  const [stores, setStores] = useState<StoreType[] | undefined>(undefined);
   const navigate = useNavigate();
+  const [stores, setStores] = useState<StoreType[] | undefined>(undefined);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['STORES'],
+    queryFn: async () => getStores(),
+  });
   const handleBack = () => {
     navigate('/');
   };
