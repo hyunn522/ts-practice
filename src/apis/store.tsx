@@ -20,17 +20,13 @@ export const getStores = async <T = StoreType[],>(id: number): Promise<T> => {
     const res = await axios.get<T>(
       `http://localhost:8080/stores?categoryId=${id}`,
     );
-    // 해당 카테고리의 가게들만 data로 return
-    const filteredData = (res.data as StoreType[]).filter(
-      (item: StoreType) => item.categoryId === id,
-    );
-    return filteredData as T;
+    return res.data;
   } catch (err) {
     if (axios.isAxiosError(err)) {
       console.error('error code : ', err.message);
     }
     alert();
-    return [] as T;
+    return [] as T; // error 발생 시 빈 배열 반환
   }
 };
 

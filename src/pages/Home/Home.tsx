@@ -10,7 +10,7 @@ import { type CategoryType } from '../../utils/interfaces';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [categories, setCategories] = useState<CategoryType[]>();
+  const [categories, setCategories] = useState<CategoryType[]>([]);
 
   const { data, isLoading } = useQuery({
     queryKey: ['CATEGORIES'],

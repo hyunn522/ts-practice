@@ -3,21 +3,24 @@ import styles from './StoreItem.module.scss';
 
 interface IStore {
   store: StoreType;
+  isLast: boolean;
 }
-const StoreItem = ({ store }: IStore) => {
-  // const isLast = store === '9';
-  const isLast = false;
-
+const StoreItem = ({ store, isLast }: IStore) => {
   return (
     <div className={`${styles.store} ${isLast ? styles.lastMargin : ''}`}>
       <image />
       <div>
-        <span className={styles.heading}>위</span>
+        <span className={styles.heading}>{store.ranking}위</span>
         <span className={styles.heading} style={{ marginTop: '2px' }}>
-          가게이름
+          {store.name}
         </span>
-        <span className={styles.body}>⭐ 별점 (리뷰갯수)</span>
-        <span className={styles.body}>분~분 • 배달비 원</span>
+        <span className={styles.body}>
+          ⭐ {store.rate} ({store.reviewCnt})
+        </span>
+        <span className={styles.body}>
+          {store.minDeliveryTime}분~{store.maxDeliveryTime}분 • 배달비{' '}
+          {store.deliveryFee}원
+        </span>
       </div>
     </div>
   );
