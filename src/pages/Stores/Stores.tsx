@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import styles from './Stores.module.scss';
 
@@ -14,6 +14,10 @@ const Stores = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
   const numberIdParam = categoryId ? parseInt(categoryId, 10) : -1;
+
+  const location = useLocation();
+  const { categoryName } = location.state;
+
   const [stores, setStores] = useState<StoreType[]>([]);
 
   const { data, isLoading } = useQuery({
@@ -40,7 +44,7 @@ const Stores = () => {
   return (
     <>
       <TopBar onClick={handleBack} />
-      <div className={styles.header}>카테고리명</div>
+      <div className={styles.header}>{categoryName}</div>
       {stores ? (
         stores
           .sort((a, b) => a.ranking - b.ranking)

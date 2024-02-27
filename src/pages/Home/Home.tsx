@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import Category from '../../components/Category/Category';
 import OrderBar from '../../components/OrderBar/OrderBar';
@@ -16,10 +16,6 @@ const Home = () => {
     queryKey: ['CATEGORIES'],
     queryFn: async () => getCategories(),
   });
-
-  const handleClick = (categoryId: number) => {
-    navigate(`/category/${categoryId}`);
-  };
 
   useEffect(() => {
     if (data) {
@@ -42,11 +38,12 @@ const Home = () => {
       <div className={styles.categoryContainer}>
         {categories?.map((category) => {
           return (
-            <Category
-              key={category.id}
-              category={category}
-              onClick={handleClick}
-            />
+            <Link
+              to={`/category/${category.id}`}
+              state={{ categoryName: category.name }}
+            >
+              <Category key={category.id} category={category} />
+            </Link>
           );
         })}
       </div>

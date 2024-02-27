@@ -29,10 +29,9 @@ interface CategoryType {
 
 interface CategoryProps {
   category: CategoryType;
-  onClick: (id: number) => any;
 }
 
-const Category = ({ category, onClick }: CategoryProps) => {
+const Category = ({ category }: CategoryProps) => {
   const icons = [
     <HomePizza key={0} />,
     <HomeSalad key={1} />,
@@ -55,7 +54,7 @@ const Category = ({ category, onClick }: CategoryProps) => {
   }, []);
 
   return (
-    <div className={styles.category} onClick={() => onClick(category.id)}>
+    <div className={styles.category}>
       {categoryIcon}
       <p>{category.name}</p>
     </div>
