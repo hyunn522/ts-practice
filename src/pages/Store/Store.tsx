@@ -26,7 +26,7 @@ const Store = () => {
   };
 
   useEffect(() => {
-    if (data !== undefined && data !== null) {
+    if (data) {
       setStore(data);
       setMenus(data.menus);
     }
@@ -40,10 +40,10 @@ const Store = () => {
     <>
       <TopBar onClick={handleBack} />
       <div className={styles.storeHeader}>
-        <div className={styles.header}>가게명{store?.name}</div>
+        <div className={styles.header}>{store?.name}</div>
         <div className={styles.review}>
-          <span>⭐ 별점</span>
-          <span>리뷰 리뷰갯수</span>
+          <span>⭐ {store?.rate}</span>
+          <span>리뷰 {store?.reviewCnt}</span>
         </div>
       </div>
       <div className={styles.storeSubHeader}>
@@ -53,18 +53,21 @@ const Store = () => {
         </div>
         <div>
           <span>최소주문</span>
-          <span>원</span>
+          <span>{store?.minDeliveryPrice}원</span>
         </div>
         <div>
           <span>배달시간</span>
-          <span>약 -분</span>
+          <span>
+            약 {store?.minDeliveryTime}-{store?.maxDeliveryTime}분
+          </span>
         </div>
       </div>
       <div className={styles.line} />
       <div className={styles.category}>카테고리</div>
       {menus ? (
         menus.map((menu) => {
-          return <MenuItem menu={menu} />;
+          const isLast = menu.id === menus.length;
+          return <MenuItem menu={menu} isLast={isLast} />;
         })
       ) : (
         <div>데이터를 불러오는 중...</div>

@@ -1,7 +1,12 @@
 @import '../../styles/colors';
 
 .topBar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #fff;
   padding: 10px 0px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;

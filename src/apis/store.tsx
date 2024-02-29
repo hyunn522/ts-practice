@@ -34,5 +34,5 @@ export const getStore = async <T = StoreType,>(id: number): Promise<T> => {
 
   const data = await res.json();
 
-  return data as T;
+  return data[0] as T;
 };

@@ -46,5 +46,10 @@
       @include body1;
       margin-top: 5px;
     }
+
+    & .maxLimit {
+      width: 156px;
+      line-height: 15px;
+    }
   }
 }

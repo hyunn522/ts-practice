@@ -4,28 +4,29 @@ import styles from './MenuItem.module.scss';
 
 interface MenuProps {
   menu: MenuType;
+  isLast: boolean;
 }
 
-const MenuItem = ({ menu }: MenuProps) => {
+const MenuItem = ({ menu, isLast }: MenuProps) => {
   // const isLast = menu === '9';
-  const isLast = false;
-  const isBest = true;
 
   return (
     <div className={` ${styles.menu} ${isLast ? styles.lastMargin : ''}`}>
       <div className={styles.menuInfo}>
         <image />
         <div className={styles.menuText}>
-          {isBest ? (
+          {menu.isBest ? (
             <div>
-              <span>메뉴이름</span>
+              <span>{menu.name}</span>
               <span className={styles.best}>BEST</span>
             </div>
           ) : (
-            <span>메뉴이름</span>
+            <span>{menu.name}</span>
           )}
-          <span className={styles.menuBody}>가격</span>
-          <span className={styles.menuBody}>재료</span>
+          <span className={styles.menuBody}>{menu.price}원</span>
+          <span className={`${styles.menuBody} ${styles.maxLimit}`}>
+            {menu.ingredients}
+          </span>
         </div>
       </div>
       <Button className={styles.addBtn}>담기</Button>
