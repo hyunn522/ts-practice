@@ -13,7 +13,7 @@ import { type StoreType } from '../../utils/interfaces';
 const Stores = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
-  const numberIdParam = categoryId ? parseInt(categoryId, 10) : -1;
+  const categoryIdParam = categoryId ? parseInt(categoryId, 10) : -1;
 
   const location = useLocation();
   const { categoryName } = location.state;
@@ -21,12 +21,16 @@ const Stores = () => {
   const [stores, setStores] = useState<StoreType[]>([]);
 
   const { data, isLoading } = useQuery({
-    queryKey: ['STORES', numberIdParam],
-    queryFn: async () => getStores(numberIdParam),
+    queryKey: ['STORES', categoryIdParam],
+    queryFn: async () => getStores(categoryIdParam),
   });
 
   const handleBack = () => {
-    navigate('/');
+    navigate(-1);
+  };
+
+  const handleStore = (id: number) => {
+    navigate(`/store/${id}`);
   };
 
   useEffect(() => {
@@ -49,8 +53,16 @@ const Stores = () => {
         stores
           .sort((a, b) => a.ranking - b.ranking)
           .map((store, index) => {
+            const storeId = store.id;
             const isLast = index === stores.length - 1;
-            return <StoreItem key={store.id} store={store} isLast={isLast} />;
+            return (
+              <StoreItem
+                key={storeId}
+                store={store}
+                isLast={isLast}
+                onClick={handleStore}
+              />
+            );
           })
       ) : (
         <div>데이터를 불러오는 중...</div>

@@ -1,12 +1,14 @@
+import { type MenuType } from '../../utils/interfaces';
 import Button from '../Button/Button';
 import styles from './MenuItem.module.scss';
 
 interface MenuProps {
-  menu: string;
+  menu: MenuType;
 }
 
 const MenuItem = ({ menu }: MenuProps) => {
-  const isLast = menu === '9';
+  // const isLast = menu === '9';
+  const isLast = false;
   const isBest = true;
 
   return (

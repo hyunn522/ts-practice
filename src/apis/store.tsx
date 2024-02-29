@@ -1,33 +1,38 @@
 /* eslint-disable no-alert */
-import axios from 'axios';
 import { type StoreType, type CategoryType } from '../utils/interfaces';
 
 export const getCategories = async <T = CategoryType[],>(): Promise<T> => {
-  try {
-    const res = await axios.get<T>('http://localhost:8080/categories');
-    return res.data;
-  } catch (err) {
-    if (axios.isAxiosError(err)) {
-      console.error('error code : ', err.message);
-    }
-    alert('카테고리 패칭 실패');
-    return [] as T; // error 발생 시 빈 배열 반환
+  const res = await fetch('http://localhost:8080/categories');
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch Categories');
   }
+
+  const data = await res.json();
+
+  return data as T;
 };
 
 export const getStores = async <T = StoreType[],>(id: number): Promise<T> => {
-  try {
-    const res = await axios.get<T>(
-      `http://localhost:8080/stores?categoryId=${id}`,
-    );
-    return res.data;
-  } catch (err) {
-    if (axios.isAxiosError(err)) {
-      console.error('error code : ', err.message);
-    }
-    alert();
-    return [] as T; // error 발생 시 빈 배열 반환
+  const res = await fetch(`http://localhost:8080/stores?categoryId=${id}`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch Stores');
   }
+
+  const data = await res.json();
+
+  return data as T;
 };
 
-// export const getStore;
+export const getStore = async <T = StoreType,>(id: number): Promise<T> => {
+  const res = await fetch(`http://localhost:8080/stores?id=${id}`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch Store');
+  }
+
+  const data = await res.json();
+
+  return data as T;
+};

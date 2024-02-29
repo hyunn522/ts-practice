@@ -4,10 +4,17 @@ import styles from './StoreItem.module.scss';
 interface IStore {
   store: StoreType;
   isLast: boolean;
+  onClick: (storeId: number) => void;
 }
-const StoreItem = ({ store, isLast }: IStore) => {
+const StoreItem = ({ store, isLast, onClick }: IStore) => {
   return (
-    <div className={`${styles.store} ${isLast ? styles.lastMargin : ''}`}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div
+      className={`${styles.store} ${isLast ? styles.lastMargin : ''}`}
+      onClick={() => {
+        onClick(store.id);
+      }}
+    >
       <image />
       <div>
         <span className={styles.heading}>{store.ranking}위</span>
